@@ -1,0 +1,164 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<f:Form editable="true" id="personalDataForm" width="100%">
+		<f:layout>
+			<f:ResponsiveGridLayout labelSpanXL="2" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" columnsXL="1" columnsL="1"
+				columnsM="1" singleContainerFullSize="false"/>
+		</f:layout>
+		<f:formContainers>
+			<f:FormContainer title="{i18n>requester}">
+				<f:formElements>
+					<f:FormElement label="{i18n>surname} {i18n>name}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/surname} {/name}"/>
+									<Switch type="AcceptReject" state="{/surname_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>owner}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/owner}"/>
+									<Switch type="AcceptReject" state="{/owner_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>piva}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/piva}"/>
+									<Switch type="AcceptReject" state="{/piva_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>fiscalCode}">
+						<f:fields>
+							<Text text="{/fiscalCode}"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/piva}"/>
+									<Switch type="AcceptReject" state="{/fiscalCode_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>sector}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>craft}" visible="{/craft}"/>
+										<Text text="{i18n>industry}" visible="{/industry}"/>
+										<Text text="{i18n>trade}" visible="{/trade}"/>
+										<Text text="{i18n>services}" visible="{/services}"/>
+										<Text text="{i18n>freelance}" visible="{/freelance}"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/sector_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>street}/{i18n>streetNumber}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/street} {/streetNumber}"/>
+									<Switch type="AcceptReject" state="{/street_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>city}/{i18n>district}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/city} {/district}"/>
+									<Switch type="AcceptReject" state="{/city_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>postCode}/{i18n>region}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/postCode} {/region}"/>
+									<Switch type="AcceptReject" state="{/postCode_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>state}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/state}"/>
+									<Switch type="AcceptReject" state="{/state_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>telephone}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/telephone}"/>
+									<Switch type="AcceptReject" state="{/telephone_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>mail}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/mail}"/>
+									<Switch type="AcceptReject" state="{/mail_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>pec}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/pec}"/>
+									<Switch type="AcceptReject" state="{/pec_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>iban}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/iban}"/>
+									<Switch type="AcceptReject" state="{/iban_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement label="{i18n>language}">
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>italian}" visible="{/italian}"/>
+										<Text text="{i18n>german}" visible="{/german}"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/language_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+			</f:FormContainer>
+		</f:formContainers>
+	</f:Form>
+</core:FragmentDefinition>
