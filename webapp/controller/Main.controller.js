@@ -8,6 +8,7 @@ sap.ui.define([
 		onAfterRendering: function () {
 			this._setSwitchPersValue(false);
 			this._setSwitchStatValue(false);
+			this._setSwitchInvValue(false);
 		},
 
 		onApproveAllPers: function (oEvent) {
@@ -60,6 +61,7 @@ sap.ui.define([
 			oModel.setProperty("/tableC_2_vrf", val);
 			oModel.setProperty("/tableC_3_vrf", val);
 			oModel.setProperty("/tableC_4_vrf", val);
+			oModel.setProperty("/claim_yes_no_vrf", val);
 		},
 
 	});

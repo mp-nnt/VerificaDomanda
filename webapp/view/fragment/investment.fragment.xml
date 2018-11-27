@@ -102,7 +102,7 @@
 										<Text text="{i18n>yes}" visible="{/claimYes}"/>
 										<Text text="{i18n>no}" visible="{/claimNo}"/>
 									</VBox>
-									<Switch type="AcceptReject" state="{/tableC_4_vrf}"/>
+									<Switch type="AcceptReject" state="{/claim_yes_no_vrf}"/>
 								</items>
 							</FlexBox>
 						</f:fields>
