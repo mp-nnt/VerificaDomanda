@@ -1,4 +1,9 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<FlexBox alignItems="Start" justifyContent="End">
+		<items>
+			<Button text="{i18n>approveAll}" id="ApproveAllStat" press="onApproveAllStat"/>
+		</items>
+	</FlexBox>
 	<f:Form editable="true" id="statementForm" width="100%">
 		<f:layout>
 			<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
@@ -9,21 +14,15 @@
 				<f:formElements>
 					<f:FormElement>
 						<f:fields>
-							<RadioButtonGroup class="sapUiMediumMarginBottom" id="company_grp">
-								<buttons>
-									<RadioButton text="{i18n>until9}" selected="{/until9}" groupName="gr_company"/>
-									<RadioButton text="{i18n>between9and49}" selected="{/between9and49}" groupName="gr_company"/>
-								</buttons>
-							</RadioButtonGroup>
-						</f:fields>
-					</f:FormElement>
-				</f:formElements>
-			</f:FormContainer>
-			<f:FormContainer title="{i18n>knowledge}">
-				<f:formElements>
-					<f:FormElement>
-						<f:fields>
-							<FormattedText htmlText="{i18n>knowledgeText}"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>until9}" visible="{/until9}"/>
+										<Text text="{i18n>between9and49}" visible="{/between9and49}"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/company_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
@@ -32,14 +31,18 @@
 				<f:formElements>
 					<f:FormElement>
 						<f:fields>
-							<VBox>
-								<FormattedText htmlText="{i18n>claimText1}" width="100%"/>
-								<CheckBox text="{i18n>newFactory}" selected="{/newFactory}"/>
-								<CheckBox text="{i18n>increaseFactory}" selected="{/increaseFactory}" class="sapUiSmallMargin"/>
-								<CheckBox text="{i18n>newGood}" selected="{/newGood}" class="sapUiSmallMargin"/>
-								<CheckBox text="{i18n>newProcess}" selected="{/newProcess}" class="sapUiSmallMargin"/>
-								<FormattedText htmlText="{i18n>claimText2}" width="100%"/>
-							</VBox>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<FormattedText htmlText="{i18n>claimText1_2}" width="100%"/>
+										<Text text="{i18n>newFactory}" selected="{/newFactory}"/>
+										<Text text="{i18n>increaseFactory}" selected="{/increaseFactory}"/>
+										<Text text="{i18n>newGood}" selected="{/newGood}"/>
+										<Text text="{i18n>newProcess}" selected="{/newProcess}"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/claim_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
@@ -48,31 +51,46 @@
 				<f:formElements>
 					<f:FormElement label="{i18n>score30}">
 						<f:fields>
-							<VBox>
-								<CheckBox text="{i18n>score30_1}" selected="{/score30_1}" wrapping="true"/>
-								<CheckBox text="{i18n>score30_2}" selected="{/score30_2}" wrapping="true"/>
-								<CheckBox text="{i18n>score30_3}" selected="{/score30_3}" wrapping="true"/>
-								<CheckBox text="{i18n>score30_4}" selected="{/score30_4}" wrapping="true"/>
-								<CheckBox text="{i18n>score30_5}" selected="{/score30_5}" wrapping="true"/>
-							</VBox>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>score30_1}" visible="{/score30_1}" wrapping="true"/>
+										<Text text="{i18n>score30_2}" visible="{/score30_2}" wrapping="true"/>
+										<Text text="{i18n>score30_3}" visible="{/score30_3}" wrapping="true"/>
+										<Text text="{i18n>score30_4}" visible="{/score30_4}" wrapping="true"/>
+										<Text text="{i18n>score30_5}" visible="{/score30_5}" wrapping="true"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/claimScore30_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="{i18n>score15}">
 						<f:fields>
-							<VBox>
-								<CheckBox text="{i18n>score15_1}" selected="{/score15_1}" wrapping="true"/>
-								<CheckBox text="{i18n>score15_2}" selected="{/score15_2}" wrapping="true"/>
-								<CheckBox text="{i18n>score15_3}" selected="{/score15_3}" wrapping="true"/>
-							</VBox>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>score15_1}" visible="{/score15_1}" wrapping="true"/>
+										<Text text="{i18n>score15_2}" visible="{/score15_2}" wrapping="true"/>
+										<Text text="{i18n>score15_3}" visible="{/score15_3}" wrapping="true"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/claimScore15_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="{i18n>score10}">
 						<f:fields>
-							<VBox>
-								<CheckBox text="{i18n>score10_1}" selected="{/score10_1}" wrapping="true"/>
-								<CheckBox text="{i18n>score10_2}" selected="{/score10_2}" wrapping="true"/>
-								<CheckBox text="{i18n>score10_3}" selected="{/score10_3}" wrapping="true"/>
-							</VBox>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>score10_1}" visible="{/score10_1}" wrapping="true"/>
+										<Text text="{i18n>score10_2}" visible="{/score10_2}" wrapping="true"/>
+										<Text text="{i18n>score10_3}" visible="{/score10_3}" wrapping="true"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/claimScore10_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>

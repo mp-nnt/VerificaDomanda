@@ -1,4 +1,9 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<FlexBox alignItems="Start" justifyContent="End">
+		<items>
+			<Button text="{i18n>approveAll}" id="ApproveAllPers" press="onApproveAllPers"/>
+		</items>
+	</FlexBox>
 	<f:Form editable="true" id="personalDataForm" width="100%">
 		<f:layout>
 			<f:ResponsiveGridLayout labelSpanXL="2" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" columnsXL="1" columnsL="1"

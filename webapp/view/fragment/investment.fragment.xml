@@ -1,4 +1,9 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<FlexBox alignItems="Start" justifyContent="End">
+		<items>
+			<Button text="{i18n>approveAll}" id="ApproveAllInv" press="onApproveAllInv"/>
+		</items>
+	</FlexBox>
 	<f:Form editable="true" id="investmentForm" width="100%">
 		<f:layout>
 			<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
@@ -9,7 +14,12 @@
 				<f:formElements>
 					<f:FormElement label="{i18n>totalA}">
 						<f:fields>
-							<Input width="50%" id="totalA_inp" value="{/totalA}"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/totalA}"/>
+									<Switch type="AcceptReject" state="{/totalA_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
@@ -18,7 +28,12 @@
 				<f:formElements>
 					<f:FormElement label="{i18n>totalB}">
 						<f:fields>
-							<Input width="50%" id="totalB_inp" value="{/totalB}"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/totalB}"/>
+									<Switch type="AcceptReject" state="{/totalB_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
@@ -27,22 +42,42 @@
 				<f:formElements>
 					<f:FormElement label="{i18n>tableC_1}">
 						<f:fields>
-							<TextArea id="tableC_1" value="{/tableC_1}" growing="true" width="100%"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/tableC_1}" wrapping="true"/>
+									<Switch type="AcceptReject" state="{/tableC_1_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label=" {i18n>tableC_2}">
 						<f:fields>
-							<TextArea id="tableC_2" value="{/tableC_2}" growing="true" width="100%"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/tableC_2}" wrapping="true"/>
+									<Switch type="AcceptReject" state="{/tableC_2_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="{i18n>tableC_3}">
 						<f:fields>
-							<TextArea id="tableC_3" value="{/tableC_3}" growing="true" width="100%"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/tableC_3}" wrapping="true"/>
+									<Switch type="AcceptReject" state="{/tableC_3_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="{i18n>tableC_4}">
 						<f:fields>
-							<TextArea id="tableC_4" value="{/tableC_4}" growing="true" width="100%"/>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<Text text="{/tableC_4}" wrapping="true"/>
+									<Switch type="AcceptReject" state="{/tableC_4_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
@@ -60,15 +95,16 @@
 				<f:formElements>
 					<f:FormElement>
 						<f:fields>
-							<VBox>
-								<FormattedText htmlText="{i18n>claimText3}" width="100%"/>
-								<RadioButtonGroup class="sapUiMediumMarginBottom" id="grp">
-									<buttons>
-										<RadioButton text="{i18n>yes}" selected="{/claimYes}" groupName="gr"/>
-										<RadioButton text="{i18n>no}" selected="{/claimNo}" groupName="gr"/>
-									</buttons>
-								</RadioButtonGroup>
-							</VBox>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<FormattedText htmlText="{i18n>claimText3}" width="100%"/>
+										<Text text="{i18n>yes}" visible="{/claimYes}"/>
+										<Text text="{i18n>no}" visible="{/claimNo}"/>
+									</VBox>
+									<Switch type="AcceptReject" state="{/tableC_4_vrf}"/>
+								</items>
+							</FlexBox>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
@@ -91,13 +127,12 @@
 					</f:FormElement>
 					<f:FormElement label="{i18n>date}">
 						<f:fields>
-							<Input width="50%" id="luogo" value="{/luogo}"/>
-							<Input width="50%" id="data" value="{/data}"/>
+							<Text text="{/luogo}, {/data}"/>
 						</f:fields>
 					</f:FormElement>
 					<f:FormElement label="{i18n>signature}">
 						<f:fields>
-							<Input width="50%" id="signature" value="{/signature}"/>
+							<Text text="{/signature}"/>
 						</f:fields>
 					</f:FormElement>
 				</f:formElements>
