@@ -95,6 +95,15 @@
 					</f:FormElement>
 				</f:formElements>
 			</f:FormContainer>
+						<f:FormContainer title="{i18n>note}">
+				<f:formElements>
+					<f:FormElement>
+						<f:fields>
+							<TextArea value="{/noteStat}" growing="true" width="100%"/>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+			</f:FormContainer>
 		</f:formContainers>
 	</f:Form>
 </core:FragmentDefinition>
