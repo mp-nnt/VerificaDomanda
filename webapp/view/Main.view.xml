@@ -5,63 +5,28 @@
 		<pages>
 			<Page title="{i18n>title}" showHeader="false">
 				<content>
-					<l:ResponsiveSplitter defaultPane="paneC" id="main">
-						<l:rootPaneContainer>
-							<l:PaneContainer orientation="Horizontal" id="container1">
-								<l:panes>
-									<l:SplitPane id="paneL">
-										<l:content>
-											<Panel backgroundDesign="Transparent" id="panelL">
-												<layoutData>
-													<l:SplitterLayoutData id="dataL" resizable="false" size="20%"/>
-												</layoutData>
-											</Panel>
-										</l:content>
-									</l:SplitPane>
-									<l:SplitPane requiredParentWidth="50" id="paneC">
-										<l:content>
-											<Panel backgroundDesign="Transparent" id="panelC">
-												<layoutData>
-													<l:SplitterLayoutData id="dataC" resizable="false" size="auto"/>
-												</layoutData>
-												<IconTabBar id="bar" backgroundDesign="Transparent" headerBackgroundDesign="Translucent">
-													<items>
-														<IconTabFilter id="personalData" icon="sap-icon://account" text="{i18n>personalData}">
-															<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.personalData" type="XML"/>
-														</IconTabFilter>
-														<IconTabFilter id="statement" icon="sap-icon://task" text="{i18n>statement}">
-															<content>
-																<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.statement" type="XML"/>
-															</content>
-														</IconTabFilter>
-														<IconTabFilter id="investment" icon="sap-icon://monitor-payments" text="{i18n>investment}">
-															<content>
-																<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.investment" type="XML"/>
-															</content>
-														</IconTabFilter>
-														<IconTabFilter id="attachment" icon="sap-icon://attachment" text="{i18n>attachment}">
-															<content>
-																<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.attachment" type="XML"/>
-															</content>
-														</IconTabFilter>
-													</items>
-												</IconTabBar>
-											</Panel>
-										</l:content>
-									</l:SplitPane>
-									<l:SplitPane id="paneR">
-										<l:content>
-											<Panel backgroundDesign="Transparent" id="panelR">
-												<layoutData>
-													<l:SplitterLayoutData id="dataR" resizable="false" size="20%"/>
-												</layoutData>
-											</Panel>
-										</l:content>
-									</l:SplitPane>
-								</l:panes>
-							</l:PaneContainer>
-						</l:rootPaneContainer>
-					</l:ResponsiveSplitter>
+					<IconTabBar id="bar" backgroundDesign="Transparent" headerBackgroundDesign="Translucent">
+						<items>
+							<IconTabFilter id="personalData" icon="sap-icon://account" text="{i18n>personalData}">
+								<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.personalData" type="XML"/>
+							</IconTabFilter>
+							<IconTabFilter id="statement" icon="sap-icon://task" text="{i18n>statement}">
+								<content>
+									<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.statement" type="XML"/>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter id="investment" icon="sap-icon://monitor-payments" text="{i18n>investment}">
+								<content>
+									<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.investment" type="XML"/>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter id="attachment" icon="sap-icon://attachment" text="{i18n>attachment}">
+								<content>
+									<core:Fragment fragmentName="com.pabz.VerificaDomanda.view.fragment.attachment" type="XML"/>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
 				</content>
 			</Page>
 		</pages>
