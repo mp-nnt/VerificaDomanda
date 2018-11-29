@@ -5,6 +5,15 @@ sap.ui.define([
 
 	return Controller.extend("com.pabz.VerificaDomanda.controller.Main", {
 
+		onInit: function () {
+			// set mock data
+			var sPath = "model/mockData/document.json";
+			//this.getView().setModel(new JSONModel(sPath), "uploadedDocument");
+			this.getView().setModel(new JSONModel({
+				"items": []
+			}), "uploadedDocument");
+		},
+
 		onAfterRendering: function () {
 			this._setSwitchPersValue(false);
 			this._setSwitchStatValue(false);

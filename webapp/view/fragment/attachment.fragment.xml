@@ -6,6 +6,19 @@
 				emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
 		</f:layout>
 		<f:formContainers>
+			<f:FormContainer title="{i18n>UplAttach}">
+				<f:formElements>
+					<f:FormElement>
+						<f:fields>
+							<List id="documentsList" items="{uploadedDocument>/items}">
+								<items>
+									<ObjectListItem title="{fileName}"></ObjectListItem>
+								</items>
+							</List>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+			</f:FormContainer>
 			<f:FormContainer title="{i18n>note}">
 				<f:formElements>
 					<f:FormElement>

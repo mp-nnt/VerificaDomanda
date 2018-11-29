@@ -44,10 +44,9 @@
 					</f:FormElement>
 					<f:FormElement label="{i18n>fiscalCode}">
 						<f:fields>
-							<Text text="{/fiscalCode}"/>
 							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
 								<items>
-									<Text text="{/piva}"/>
+									<Text text="{/fiscalCode}"/>
 									<Switch type="AcceptReject" state="{/fiscalCode_vrf}"/>
 								</items>
 							</FlexBox>
