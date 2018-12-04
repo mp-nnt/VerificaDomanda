@@ -1,4 +1,4 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table">
 	<FlexBox alignItems="Start" justifyContent="End">
 		<items>
 			<Button text="{i18n>approveAll}" id="ApproveAllStat" press="onApproveAllStat"/>
@@ -41,6 +41,40 @@
 										<Text text="{i18n>newProcess}" selected="{/newProcess}"/>
 									</VBox>
 									<Switch type="AcceptReject" state="{/claim_vrf}"/>
+								</items>
+							</FlexBox>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+			</f:FormContainer>
+			<f:FormContainer title="{i18n>claim}">
+				<f:formElements>
+					<f:FormElement>
+						<f:fields>
+							<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+								<items>
+									<VBox>
+										<Text text="{i18n>claim3_1}" visible="{/claim3_1}"/>
+										<Text text="{i18n>claim3_2}" visible="{/claim3_2}"/>
+										<Text text="{i18n>claim3_3}" visible="{/claim3_3}"/>
+										<t:Table rows="{/claim3_tbl}" selectionMode="None" visibleRowCount="5">
+											<t:columns>
+												<t:Column>
+													<Label text="{i18n>claim3_tipo}"/>
+													<t:template>
+														<Text text="{tipologia}"/>
+													</t:template>
+												</t:Column>
+												<t:Column>
+													<Label text="{i18n>claim3_importo}"/>
+													<t:template>
+														<Text text="{importoEuro}"/>
+													</t:template>
+												</t:Column>
+											</t:columns>
+										</t:Table>
+									</VBox>
+									<Switch type="AcceptReject" state="{/claim3_vrf}"/>
 								</items>
 							</FlexBox>
 						</f:fields>
@@ -95,7 +129,7 @@
 					</f:FormElement>
 				</f:formElements>
 			</f:FormContainer>
-						<f:FormContainer title="{i18n>note}">
+			<f:FormContainer title="{i18n>note}">
 				<f:formElements>
 					<f:FormElement>
 						<f:fields>
